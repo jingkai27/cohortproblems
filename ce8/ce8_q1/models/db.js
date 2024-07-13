@@ -6,14 +6,14 @@ let pool = mysql
     host: "localhost",
     user: "pichu",
     database: "ce8q1",
-    password: "pikaP!",
+    password: "pikachuIsHappy345!",
     connectionLimit: 10,
   })
   .promise();
 
 
 async function cleanup() {
-    await pool.end();
+  await pool.end();
 }
 
-module.exports = {pool, cleanup};
+module.exports = { pool, cleanup };

@@ -5,7 +5,7 @@ function update_deptsregion(json) {
     var html = "";
     for (let i = 0; i < json.length; i++) {
         const dept = json[i];
-        html += `<li><div>${dept.code}</div></li>`;  
+        html += `<li><div>${dept.code}</div></li>`;
     }
     var region = document.getElementById("deptsregion");
     region.innerHTML = html;
@@ -17,15 +17,15 @@ function update_deptsregion(json) {
 // Task 1 TODO:
 // render the API result (all staff) in the deptsregion div
 function handleSendButtonClick() {
-    var code  = document.getElementById("code");
+    var code = document.getElementById("code");
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             var res = xhr.responseText;
             var json = JSON.parse(res);
             // TODO: fixme
         }
-    }; 
+    };
     // cosntructing a HTTP POST request
     var params = `code=${code.value}`;
     xhr.open('POST', `/dept/submit/`, true);
@@ -53,4 +53,4 @@ function run() {
     xhr.send();
 }
 
-document.addEventListener( "DOMContentLoaded", run);
+document.addEventListener("DOMContentLoaded", run);
